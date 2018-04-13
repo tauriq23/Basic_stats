@@ -149,7 +149,7 @@ sa_clean <- sa_long %>%
 
 ggplot(data = sa_clean, aes(x = minutes)) +
   geom_histogram(aes(fill = time_type), position = "dodge") +
-  facet_wrap(~time_type, ncol =1, scales = "free_x")
+  facet_wrap(~time_type, ncol = 1, scales = "free_x")
 
 #Relative proportion histogram
 
@@ -178,7 +178,7 @@ sa_summary_stats <- sa_clean %>%
 
 ggplot(data = sa_clean, aes(x = time_type, y = minutes)) +
   geom_boxplot(aes(fill = time_type), notch = TRUE) +
-  geom_point(data = sa_summary_stats, size = 3, shape =11,
+  geom_point(data = sa_summary_stats, size = 3, shape = 11,
              aes(y = time_type_mean), colour = "goldenrod")
 
 
