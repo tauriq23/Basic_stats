@@ -157,6 +157,7 @@ ggplot(data = filter(chicks, Time == 21),
   geom_vline(data = central_chicks,
              aes(xintercept =median_weight,
                  colour =Diet), size = 1.5, linetype = "dashed")
+# Wo!Such plot. Many lines. Good job :)
 
 # Skewness ----------------------------------------------------------------
 
