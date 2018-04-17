@@ -192,6 +192,8 @@ ggplot(data = sa_times, aes(y = now_now, x = just_now)) +
 
 #Adding a trendline 
 
+# Consider adding a geo column so you can visualise this as well
+
 #ggplot(data = sa_times, aes(y = now_now, x = just_now)) +
  # geom_point(aes(colour = geo)) +
   #geom_smooth(aes(colour = geo), method = "lm") +
