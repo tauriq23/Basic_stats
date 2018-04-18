@@ -205,7 +205,6 @@ compare_means(value ~ site, data = ecklonia_sub, method = "t.test", var.equal = 
 #The stipe mass (kg) of the kelp Ecklonia maxima was found to be significantly 
 #greater at Batsata Rock than at Boulders Beach (p = 0.03, t = 1.87, df = 24).
 
-
 # Exercise 1 --------------------------------------------------------------
 
 #Find or create your own normally distributed data and 
