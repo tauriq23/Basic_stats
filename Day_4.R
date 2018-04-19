@@ -25,7 +25,6 @@ compare_means(weight ~ Diet, data = chicks_sub, method = "t.test")
 
 #In conclusion there is no significant difference in weight and diet (t = -1.2857, df = 15.325, p-value = 0.2176)
 
-
 # 1-Way ANOVA  ------------------------------------------------------------
 
 #Research question: Is there a difference in chicken mass attained after 21 dyas 
@@ -48,7 +47,6 @@ summary(chicks.aov1)
 ggplot(data = chicks_21, aes(x = Time, y = weight)) +
   geom_boxplot(aes(fill = Diet), notch = TRUE) #When bands overlap theres no significant difference, when they dont overlap 
 #there is a significant difference
-
 
 # Tukey HSD test ----------------------------------------------------------
 
@@ -83,7 +81,6 @@ plot(TukeyHSD(chicks.aov1, "Diet"))
 
 plot(TukeyHSD(aov(weight ~ Diet, data = chicks_21)))
                                 
-
 # Multiple factor ANOVA ---------------------------------------------------
 
 #H0: There is no change in chicken mass (kg) from day 0 to day 21
@@ -140,7 +137,6 @@ chicks_mean <- ChickWeight %>%
 ggplot(data = chicks_mean, aes(x= Time, y = weight_mean, colour = Diet)) +
   geom_line(size = 2) +
   geom_point(shape = 15, size = 5)
-
 
 # non-parametic tests -----------------------------------------------------
 
