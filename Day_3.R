@@ -261,7 +261,3 @@ t.test(dat ~ sample, data = random_data, var.equal = TRUE)
 #In conclusion sample A is not significantly greater than sample B (t = 1.2998, df = 136, p-value = 0.1959)
 #The data used in this exercise is random thus results obtained when conducting the t-test will vary
 
-
-
-
-
