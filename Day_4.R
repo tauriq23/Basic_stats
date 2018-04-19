@@ -6,7 +6,6 @@
 # Set-up ------------------------------------------------------------------
 
 library(tidyverse)
-library(ggplot2)
 library(ggpubr)
 
 # t-test ------------------------------------------------------------------
@@ -92,7 +91,7 @@ chicks_0_21 <- ChickWeight %>%
 
 #Visualize the data
 
-ggplot(data = chicks_0_21, aes (x = Time, y = weight)) +
+ggplot(data = chicks_0_21, aes (x = as.factor(Time), y = weight)) +
   geom_boxplot(notch = T, aes (fill = as.factor(Time)))
 
 #Run an ANOVA
