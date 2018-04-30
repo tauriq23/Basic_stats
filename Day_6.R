@@ -136,6 +136,7 @@ iris.dat <- as.tibble(iris)
 # H0: There is no significant difference in the petal length between three iris species
 # H1: There is a significnat difference in the petal length between three iris species
 
+# Test assumptions
 
 iris %>% 
   group_by(Species) %>% 
