@@ -286,4 +286,3 @@ summary(toothgrowth.aov)
 
 # In conclusion Pr < 0.05, thus we do not accept the null hypothesis, 
 # there is a significant correlation between tooth length and supplement application
-
