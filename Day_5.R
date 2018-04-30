@@ -180,7 +180,7 @@ library(corrplot)
 ecklonia <- read_csv("data/ecklonia.csv")
 
 
-# Rormulate a hypothesis --------------------------------------------------
+# Formulate a hypothesis --------------------------------------------------
 
 #H0: There is no relationship between frond length and frond mass
 #for the kelp Ecklonia maxima
@@ -230,3 +230,60 @@ ecklonia_pearson <- cor(ecklonia_sub)
 ecklonia_pearson
 
 corrplot(ecklonia_pearson, method = "circle")
+
+
+# Exercise 1 --------------------------------------------------------------
+
+#Here is bunch of data for pigs raised on different diets. The experiment is similar to the chicken one. 
+#Does feed type have an effect on the mass of pigs at the end of the experiment?
+
+# H0: Feed type does not significantly affect pig mass
+# H1: Feed type does significantly affect pig mass
+
+# enter the mass at the end of the experiment
+feed_1 <- c(60.8, 57.0, 65.0, 58.6, 61.7)
+feed_2 <- c(68.7, 67.7, 74.0, 66.3, 69.8)
+feed_3 <- c(102.6, 102.1, 100.2, 96.5)
+feed_4 <- c(87.9, 84.2, 83.1, 85.7, 90.3)
+
+#making the dataframe
+chitlins <- as.tibble(data.frame(
+  feed = c(
+    rep("Feed 1", length(feed_1)),
+    rep("Feed 2", length(feed_2)),
+    rep("Feed 3", length(feed_3)),
+    rep("Feed 4", length(feed_4))),
+  mass = c(feed_1, feed_2, feed_3, feed_4)))
+
+# Run ANOVA
+
+chitlins.aov1 <- aov(mass ~ feed, data = chitlins)
+
+# Data summary
+
+summary(chitlins.aov1)
+
+# In conclusion Pr < 0.0.5, thus we do not accept the null hypothesis. 
+# Feed type does significantly effect pig mass.
+
+# Exercise 2 --------------------------------------------------------------
+
+#Construct suitable null and alternative hypotheses for the built-in ToothGrowth data, 
+#and test your hypotheses using an ANOVA.
+
+# H0: There is no significant correlation bewteen tooth length and supplement application
+# H1: There is a difference correlation between tooth length and supplement application
+
+#Load Data
+
+toothgrowth <- ToothGrowth
+
+# Run ANOVA
+toothgrowth.aov <- aov(len ~ supp, data = toothgrowth)
+
+# Data summary
+summary(toothgrowth.aov)
+
+# In conclusion Pr < 0.05, thus we do not accept the null hypothesis, 
+# there is a significant correlation between tooth length and supplement application
+
