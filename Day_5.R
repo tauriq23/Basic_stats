@@ -7,7 +7,7 @@
 # Set-up ------------------------------------------------------------------
 
 library(tidyverse)
-library(Rmisc)
+# library(Rmisc) # Unfortunately this overrides many dplyr functions
 
 
 # Load data ---------------------------------------------------------------
@@ -34,7 +34,7 @@ snakes.summary
 
 #Fiest calculate SE and CI
 
-snakes.summary2 <- summarySE(data = snakes,
+snakes.summary2 <- Rmisc::summarySE(data = snakes,
                              measurevar = "openings",
                              groupvars = c("day"))
 
@@ -105,9 +105,9 @@ moth_trap.summary <- moth_trap %>%
   ungroup()
 moth_trap
 
-moth_trap.summary2 <- summarySE(data = moth_trap, measurevar = "count", groupvars = c("trap"))
+moth_trap.summary2 <- Rmisc::summarySE(data = moth_trap, measurevar = "count", groupvars = c("trap"))
 
-plt1<- ggplot(moth_trap, aes(x = Location, y = count)) +
+plt1 <- ggplot(moth_trap, aes(x = Location, y = count)) +
   geom_boxplot()+
   geom_jitter(width = 0.05, shape = 21)
 
