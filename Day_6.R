@@ -150,3 +150,6 @@ kruskal.test(Petal.Length ~ Species, data = iris)
 
 # In conclusion p < 0.05, thus the null hypothesis is not accepted.
 # There is a signifant difference between the petal length between three iris species
+
+
+
